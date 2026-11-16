@@ -7,7 +7,7 @@
 <meta name="description" content="Aamena Ratlamwala - Senior Media Buyer. Paid media across Google, Meta, LinkedIn, YouTube and X for jewellery, beauty, D2C and enterprise brands.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Caveat:wght@600;700&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 <style>
 :root {
   --paper: #F6F9FE;
@@ -685,6 +685,41 @@ footer .script { font-size: 1.3rem; }
   .rv, .rv-pop, .split .w > span { opacity: 1 !important; transform: none !important; }
   .fn .fill { width: var(--w) !important; }
 }
+
+/* ===== new_campaign.exe pop-up ===== */
+.nc-wrap { position: relative; max-width: 560px; margin: 80px auto 0; padding: 0 8px; }
+.nc-win { position: relative; z-index: 1; border-radius: 14px; overflow: hidden; background: rgba(255,255,255,0.72);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4); backdrop-filter: blur(16px) saturate(1.4);
+  border: 2px solid var(--navy); box-shadow: 8px 8px 0 var(--sky-2), 0 40px 70px -36px rgba(29,60,143,0.55); }
+.nc-bar { display: flex; align-items: center; padding: 9px 12px 9px 52px; color: #fff; font-family: 'Pixelify Sans', ui-monospace, monospace; font-size: 0.9rem; letter-spacing: 0.03em;
+  background: linear-gradient(180deg, var(--blue), var(--navy)); border-bottom: 2px solid var(--ink); }
+.nc-dots { margin-left: auto; display: flex; gap: 6px; }
+.nc-dots i { width: 11px; height: 11px; background: #fff; box-shadow: inset -2px -2px 0 var(--sky-2); }
+.nc-dots i:last-child { background: var(--sky); }
+.nc-body { padding: 30px 26px 26px; display: grid; justify-items: center; gap: 14px; text-align: center; }
+.nc-heart { width: 66px; height: auto; animation: ncBeat 1.2s steps(2) infinite; }
+@keyframes ncBeat { 50% { transform: scale(1.12); } }
+.nc-q { font-family: 'Pixelify Sans', ui-monospace, monospace; font-size: clamp(1.05rem, 2.4vw, 1.3rem); font-weight: 500; color: var(--navy); line-height: 1.35; }
+.nc-sub { color: var(--ink-soft); font-size: 0.95rem; }
+.nc-btns { position: relative; width: 100%; min-height: 120px; display: flex; align-items: center; justify-content: center; gap: 18px; }
+.nc-ok-wrap { position: relative; }
+.nc-btn { position: relative; display: inline-block; font-family: 'Pixelify Sans', ui-monospace, monospace; font-size: 1.05rem; padding: 12px 30px; text-decoration: none; cursor: pointer;
+  color: var(--navy); background: #fff; border: 2px solid var(--navy); box-shadow: 4px 4px 0 var(--navy); transition: box-shadow 0.2s, translate 0.2s; }
+.nc-btn:hover { translate: -2px -2px; box-shadow: 6px 6px 0 var(--navy); }
+.nc-btn:active { translate: 3px 3px; box-shadow: 1px 1px 0 var(--navy); }
+.nc-btn.ok { background: var(--navy); color: #fff; box-shadow: 4px 4px 0 var(--ink); }
+.nc-btn.ok:hover { box-shadow: 6px 6px 0 var(--ink); }
+.nc-btn.later { transition: transform 0.45s cubic-bezier(.34,1.56,.64,1), box-shadow 0.2s, translate 0.2s; will-change: transform; }
+.nc-btn:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+.nc-cur { position: absolute; right: -24px; bottom: -34px; width: 30px; height: auto; pointer-events: none; animation: ncTap 3.2s var(--ease) infinite; }
+@keyframes ncTap { 0%, 60%, 100% { transform: translate(0,0); } 70% { transform: translate(-5px,-5px) scale(.92); } 78% { transform: translate(0,0); } }
+.nc-msg { min-height: 1.5em; font-family: 'Caveat', cursive; font-size: 1.45rem; font-weight: 700; color: var(--blue); line-height: 1.2; }
+.nc-stk { position: absolute; z-index: 2; pointer-events: none; }
+.nc-bow { width: 84px; left: -26px; top: -34px; transform: rotate(-16deg); }
+.nc-gheart { width: 64px; right: -18px; bottom: -22px; animation: ncBob 5s ease-in-out infinite; }
+@keyframes ncBob { 50% { transform: translateY(-10px) rotate(-4deg); } }
+@media (max-width: 560px) { .nc-body { padding: 26px 16px 22px; } .nc-btn { padding: 11px 20px; } .nc-bow { left: -6px; } .nc-gheart { right: 0; } }
+@media (prefers-reduced-motion: reduce) { .nc-heart, .nc-cur, .nc-gheart { animation: none; } .nc-btn.later { transition: none; } }
 </style>
 </head>
 <body>
@@ -1151,6 +1186,37 @@ footer .script { font-size: 1.3rem; }
       <div class="c-row"><span class="c-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><span><b>Notice period</b><span>60 days · based in Mumbai</span></span></div>
     </div>
   </div>
+
+  <!-- new_campaign.exe pop-up -->
+  <div class="nc-wrap rv" style="--d:.1s">
+    <svg class="nc-stk nc-bow" viewBox="0 0 100 80" aria-hidden="true"><defs>
+  <linearGradient id="ncPink" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd9e5"/><stop offset=".5" stop-color="#f3a6c0"/><stop offset="1" stop-color="#d9709a"/></linearGradient>
+  <radialGradient id="ncBlue" cx=".36" cy=".3" r=".8"><stop offset="0" stop-color="#ffffff"/><stop offset=".22" stop-color="#d4e6f8"/><stop offset=".65" stop-color="#4a7fd0"/><stop offset="1" stop-color="#1d3c8f"/></radialGradient>
+</defs>
+  <path d="M47 36L34 72L43 66L49 74L51 38Z" fill="url(#ncPink)"/><path d="M53 36L66 72L57 66L51 74L49 38Z" fill="url(#ncPink)"/>
+  <path d="M50 30C36 4 4 4 7 28C9 48 35 46 50 35Z" fill="url(#ncPink)"/><path d="M50 30C64 4 96 4 93 28C91 48 65 46 50 35Z" fill="url(#ncPink)"/>
+  <path d="M14 22C18 12 30 12 38 20" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+  <rect x="42" y="25" width="16" height="16" rx="6" fill="#e58aae"/><ellipse cx="47" cy="30" rx="3" ry="2" fill="#fff" opacity=".9"/>
+</svg>
+    <div class="nc-win" role="group" aria-labelledby="ncQ">
+      <div class="nc-bar"><span>new_campaign.exe</span><span class="nc-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <div class="nc-body">
+        <svg class="nc-heart" viewBox="0 0 11 10" width="66" height="60" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><rect x="1" y="0" width="3" height="1" fill="#1D3C8F"/><rect x="7" y="0" width="3" height="1" fill="#1D3C8F"/><rect x="0" y="1" width="1" height="1" fill="#1D3C8F"/><rect x="1" y="1" width="3" height="1" fill="#4A7FD0"/><rect x="4" y="1" width="1" height="1" fill="#1D3C8F"/><rect x="6" y="1" width="1" height="1" fill="#1D3C8F"/><rect x="7" y="1" width="3" height="1" fill="#4A7FD0"/><rect x="10" y="1" width="1" height="1" fill="#1D3C8F"/><rect x="0" y="2" width="1" height="1" fill="#1D3C8F"/><rect x="1" y="2" width="1" height="1" fill="#4A7FD0"/><rect x="2" y="2" width="2" height="1" fill="#FFFFFF"/><rect x="4" y="2" width="1" height="1" fill="#4A7FD0"/><rect x="5" y="2" width="1" height="1" fill="#1D3C8F"/><rect x="6" y="2" width="4" height="1" fill="#4A7FD0"/><rect x="10" y="2" width="1" height="1" fill="#1D3C8F"/><rect x="0" y="3" width="1" height="1" fill="#1D3C8F"/><rect x="1" y="3" width="1" height="1" fill="#4A7FD0"/><rect x="2" y="3" width="1" height="1" fill="#FFFFFF"/><rect x="3" y="3" width="7" height="1" fill="#4A7FD0"/><rect x="10" y="3" width="1" height="1" fill="#1D3C8F"/><rect x="0" y="4" width="1" height="1" fill="#1D3C8F"/><rect x="1" y="4" width="8" height="1" fill="#4A7FD0"/><rect x="9" y="4" width="1" height="1" fill="#8FB6E6"/><rect x="10" y="4" width="1" height="1" fill="#1D3C8F"/><rect x="1" y="5" width="1" height="1" fill="#1D3C8F"/><rect x="2" y="5" width="6" height="1" fill="#4A7FD0"/><rect x="8" y="5" width="1" height="1" fill="#8FB6E6"/><rect x="9" y="5" width="1" height="1" fill="#1D3C8F"/><rect x="2" y="6" width="1" height="1" fill="#1D3C8F"/><rect x="3" y="6" width="4" height="1" fill="#4A7FD0"/><rect x="7" y="6" width="1" height="1" fill="#8FB6E6"/><rect x="8" y="6" width="1" height="1" fill="#1D3C8F"/><rect x="3" y="7" width="1" height="1" fill="#1D3C8F"/><rect x="4" y="7" width="2" height="1" fill="#4A7FD0"/><rect x="6" y="7" width="1" height="1" fill="#8FB6E6"/><rect x="7" y="7" width="1" height="1" fill="#1D3C8F"/><rect x="4" y="8" width="1" height="1" fill="#1D3C8F"/><rect x="5" y="8" width="1" height="1" fill="#8FB6E6"/><rect x="6" y="8" width="1" height="1" fill="#1D3C8F"/><rect x="5" y="9" width="1" height="1" fill="#1D3C8F"/></svg>
+        <p class="nc-q" id="ncQ">Ready to make your ad budget work harder?</p>
+        <p class="nc-sub">Say hi on WhatsApp. I usually reply the same day.</p>
+        <div class="nc-btns" id="ncBtns">
+          <span class="nc-ok-wrap"><a class="nc-btn ok" href="https://wa.me/919594138110" target="_blank" rel="noopener">Ok!</a><svg class="nc-cur" viewBox="0 0 12 19" width="30" height="48" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><rect x="0" y="0" width="1" height="1" fill="#1D3C8F"/><rect x="0" y="1" width="2" height="1" fill="#1D3C8F"/><rect x="0" y="2" width="1" height="1" fill="#1D3C8F"/><rect x="1" y="2" width="1" height="1" fill="#FFFFFF"/><rect x="2" y="2" width="1" height="1" fill="#1D3C8F"/><rect x="0" y="3" width="1" height="1" fill="#1D3C8F"/><rect x="1" y="3" width="1" height="1" fill="#FFFFFF"/><rect x="2" y="3" width="1" height="1" fill="#4A7FD0"/><rect x="3" y="3" width="1" height="1" fill="#1D3C8F"/><rect x="0" y="4" width="1" height="1" fill="#1D3C8F"/><rect x="1" y="4" width="1" height="1" fill="#FFFFFF"/><rect x="2" y="4" width="2" height="1" fill="#4A7FD0"/><rect x="4" y="4" width="1" height="1" fill="#1D3C8F"/><rect x="0" y="5" width="1" height="1" fill="#1D3C8F"/><rect x="1" y="5" width="1" height="1" fill="#FFFFFF"/><rect x="2" y="5" width="3" height="1" fill="#4A7FD0"/><rect x="5" y="5" width="1" height="1" fill="#1D3C8F"/><rect x="0" y="6" width="1" height="1" fill="#1D3C8F"/><rect x="1" y="6" width="5" height="1" fill="#4A7FD0"/><rect x="6" y="6" width="1" height="1" fill="#1D3C8F"/><rect x="0" y="7" width="1" height="1" fill="#1D3C8F"/><rect x="1" y="7" width="6" height="1" fill="#4A7FD0"/><rect x="7" y="7" width="1" height="1" fill="#1D3C8F"/><rect x="0" y="8" width="1" height="1" fill="#1D3C8F"/><rect x="1" y="8" width="7" height="1" fill="#4A7FD0"/><rect x="8" y="8" width="1" height="1" fill="#1D3C8F"/><rect x="0" y="9" width="1" height="1" fill="#1D3C8F"/><rect x="1" y="9" width="8" height="1" fill="#4A7FD0"/><rect x="9" y="9" width="1" height="1" fill="#1D3C8F"/><rect x="0" y="10" width="1" height="1" fill="#1D3C8F"/><rect x="1" y="10" width="9" height="1" fill="#4A7FD0"/><rect x="10" y="10" width="1" height="1" fill="#1D3C8F"/><rect x="0" y="11" width="1" height="1" fill="#1D3C8F"/><rect x="1" y="11" width="6" height="1" fill="#4A7FD0"/><rect x="7" y="11" width="5" height="1" fill="#1D3C8F"/><rect x="0" y="12" width="1" height="1" fill="#1D3C8F"/><rect x="1" y="12" width="3" height="1" fill="#4A7FD0"/><rect x="4" y="12" width="1" height="1" fill="#1D3C8F"/><rect x="5" y="12" width="2" height="1" fill="#4A7FD0"/><rect x="7" y="12" width="1" height="1" fill="#1D3C8F"/><rect x="0" y="13" width="1" height="1" fill="#1D3C8F"/><rect x="1" y="13" width="2" height="1" fill="#4A7FD0"/><rect x="3" y="13" width="1" height="1" fill="#1D3C8F"/><rect x="5" y="13" width="1" height="1" fill="#1D3C8F"/><rect x="6" y="13" width="2" height="1" fill="#4A7FD0"/><rect x="8" y="13" width="1" height="1" fill="#1D3C8F"/><rect x="0" y="14" width="1" height="1" fill="#1D3C8F"/><rect x="1" y="14" width="1" height="1" fill="#4A7FD0"/><rect x="2" y="14" width="1" height="1" fill="#1D3C8F"/><rect x="5" y="14" width="1" height="1" fill="#1D3C8F"/><rect x="6" y="14" width="2" height="1" fill="#4A7FD0"/><rect x="8" y="14" width="1" height="1" fill="#1D3C8F"/><rect x="0" y="15" width="2" height="1" fill="#1D3C8F"/><rect x="6" y="15" width="1" height="1" fill="#1D3C8F"/><rect x="7" y="15" width="2" height="1" fill="#4A7FD0"/><rect x="9" y="15" width="1" height="1" fill="#1D3C8F"/><rect x="0" y="16" width="1" height="1" fill="#1D3C8F"/><rect x="6" y="16" width="1" height="1" fill="#1D3C8F"/><rect x="7" y="16" width="2" height="1" fill="#4A7FD0"/><rect x="9" y="16" width="1" height="1" fill="#1D3C8F"/><rect x="7" y="17" width="1" height="1" fill="#1D3C8F"/><rect x="8" y="17" width="2" height="1" fill="#4A7FD0"/><rect x="10" y="17" width="1" height="1" fill="#1D3C8F"/><rect x="8" y="18" width="2" height="1" fill="#1D3C8F"/></svg></span>
+          <button class="nc-btn later" id="ncLater" type="button">Maybe later</button>
+        </div>
+        <p class="nc-msg" id="ncMsg" aria-live="polite"></p>
+      </div>
+    </div>
+    <svg class="nc-stk nc-gheart" viewBox="0 0 100 92" aria-hidden="true">
+  <path d="M50 88C22 70 4 52 6 32C8 14 22 4 36 6C42 7 47 11 50 17C53 11 58 7 64 6C78 4 92 14 94 32C96 52 78 70 50 88Z" fill="url(#ncBlue)"/>
+  <path d="M50 88C22 70 4 52 6 32C8 14 22 4 36 6C42 7 47 11 50 17C53 11 58 7 64 6C78 4 92 14 94 32C96 52 78 70 50 88Z" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="2"/>
+  <ellipse cx="25" cy="24" rx="11" ry="6" fill="#fff" opacity=".9" transform="rotate(-40 25 24)"/><circle cx="78" cy="22" r="3" fill="#fff" opacity=".7"/>
+</svg>
+  </div>
   <footer><span class="script">made with care</span> · © Aamena Ratlamwala</footer>
 </section>
 
@@ -1547,6 +1613,52 @@ document.querySelectorAll('a[href$=".pdf"]').forEach(a => {
     } catch (err) { /* declined or unavailable */ }
   });
 });
+</script>
+
+<script>
+/* new_campaign.exe: "Maybe later" jumps away whenever the mouse arrow gets close */
+(function () {
+  var area = document.getElementById('ncBtns'), btn = document.getElementById('ncLater'),
+      ok = area && area.querySelector('.nc-btn.ok'), msg = document.getElementById('ncMsg');
+  if (!area || !btn) return;
+  var ox = 0, oy = 0, tries = 0, lastJump = 0;
+  var quips = ['too slow!', 'nope', 'over here', 'missed me', 'almost!', 'just click Ok', 'ok, now you are just playing'];
+  function place(x, y) {
+    ox = x; oy = y;
+    btn.style.transform = 'translate(' + x + 'px,' + y + 'px) rotate(' + ((Math.random() - 0.5) * 14).toFixed(1) + 'deg)';
+  }
+  function overlaps(a, b, pad) {
+    return !(a.right + pad < b.left || a.left - pad > b.right || a.bottom + pad < b.top || a.top - pad > b.bottom);
+  }
+  area.addEventListener('pointermove', function (e) {
+    if (e.pointerType && e.pointerType !== 'mouse') return;
+    var now = performance.now();
+    if (now - lastJump < 180) return;
+    var r = btn.getBoundingClientRect(), A = area.getBoundingClientRect(), K = ok.getBoundingClientRect();
+    var cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    var reach = Math.max(r.width, r.height) / 2 + 36;
+    if (Math.hypot(cx - e.clientX, cy - e.clientY) > reach) return;
+    lastJump = now;
+    // where the button would sit with no offset
+    var bx = r.left - ox, by = r.top - oy, pad = 6;
+    var minX = A.left + pad - bx, maxX = A.right - pad - r.width - bx;
+    var minY = A.top + pad - by, maxY = A.bottom - pad - r.height - by;
+    var best = null, bestD = -1;
+    for (var i = 0; i < 24; i++) {
+      var x = minX + Math.random() * (maxX - minX), y = minY + Math.random() * (maxY - minY);
+      var box = { left: bx + x, top: by + y, right: bx + x + r.width, bottom: by + y + r.height };
+      if (overlaps(box, K, 14)) continue;
+      var d = Math.hypot(box.left + r.width / 2 - e.clientX, box.top + r.height / 2 - e.clientY);
+      if (d > bestD) { bestD = d; best = [x, y]; }
+    }
+    if (best) place(best[0], best[1]);
+    msg.textContent = quips[tries++ % quips.length];
+  });
+  btn.addEventListener('click', function () {
+    msg.textContent = 'No rush. The WhatsApp link stays right here whenever you are ready.';
+  });
+  window.addEventListener('resize', function () { place(0, 0); });
+})();
 </script>
 </body>
 </html>
